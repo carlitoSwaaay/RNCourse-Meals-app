@@ -2,11 +2,19 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 import { MEALS } from '../data/dummy-data';
+import { TabRouter } from '@react-navigation/native';
 
-const MealsOverviewScreen = () => {
+const MealsOverviewScreen = ({ route }) => {
+  const catId = route.params.categoryId;
+
+
+  const displayedMeals = MEALS.filter((mealItem) => {
+    return mealItem.categoryIds.indexOf(catId)
+  })
+
   return (
     <View>
-      <Text>Meals Overview Screen</Text>
+      <Text>Meals Overview Screen - {catId}</Text>
     </View>
   )
 }
