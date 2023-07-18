@@ -1,4 +1,5 @@
 import { StyleSheet, FlatList, View, Text } from 'react-native';
+import MealItem from '../components/mealItem';
 import { MEALS } from '../data/dummy-data';
 
 
@@ -12,15 +13,13 @@ const MealsOverviewScreen = ({ route }) => {
 
   renderMealItem = (itemData) => {
     return (
-      <View>
-        <Text></Text>
-      </View>
+      <MealItem title={itemData.item.title} />
     );
   };
 
   return (
     <View style={styles.container}>
-      <FlatList data={displayedMeals} keyExtractor={item.id} renderItem={ } />
+      <FlatList data={displayedMeals} keyExtractor={item.id} renderItem={renderMealItem} />
     </View>
   )
 }
