@@ -1,6 +1,6 @@
 import { StyleSheet, FlatList, View } from 'react-native';
 import MealItem from '../components/mealItem';
-import { MEALS } from '../data/dummy-data';
+import { MEALS, CATEGORIES } from '../data/dummy-data';
 
 
 const MealsOverviewScreen = ({ route }) => {
@@ -11,11 +11,9 @@ const MealsOverviewScreen = ({ route }) => {
     return mealItem.categoryIds.indexOf(catId) >= 0;
   });
 
-  const renderMealItem = (itemData) => {
-    return (
-      <MealItem title={itemData.item.title} />
-    );
-  };
+  function renderMealItem(itemData) {
+    return <MealItem title={itemData.item.title} />
+  }
 
   return (
     <View style={styles.container}>
