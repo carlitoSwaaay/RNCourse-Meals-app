@@ -1,17 +1,19 @@
-import { View, Text, Pressable, StyleSheet, Image } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Image, Platform } from 'react-native';
 
 const MealItem = ({ title, imageUrl, duration, complexity, affordability }) => {
   return (
     <View style={styles.mealItem}>
       <Pressable>
-        <View>
-          <Image style={styles.image} source={{ uri: imageUrl }} />
-          <Text style={styles.title}>{title}</Text>
-        </View>
-        <View style={styles.details}>
-          <Text style={styles.detailItem}>{duration}</Text>
-          <Text style={styles.detailItem}>{complexity.toUppercase()}</Text>
-          <Text style={styles.detailItem}>{affordability.toUppercase()}</Text>
+        <View style={styles.innerContainer}>
+          <View>
+            <Image style={styles.image} source={{ uri: imageUrl }} />
+            <Text style={styles.title}>{title}</Text>
+          </View>
+          <View style={styles.details}>
+            <Text style={styles.detailItem}>{duration}</Text>
+            <Text style={styles.detailItem}>{complexity.toUppercase()}</Text>
+            <Text style={styles.detailItem}>{affordability.toUppercase()}</Text>
+          </View>
         </View>
       </Pressable>
   </View>
@@ -26,6 +28,16 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     overflow: "hidden",
     backgroundColor: 'white',
+    elevation: 4,
+    shadowColor: 'black',
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
+  },
+  innerContainer: {
+    borderRadius: 8,
+    overflow: 'hidden'
   },
   image: {
     width: '100%',
@@ -40,6 +52,7 @@ const styles = StyleSheet.create({
   details: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     padding: 8,
   },
   detailItem: {
