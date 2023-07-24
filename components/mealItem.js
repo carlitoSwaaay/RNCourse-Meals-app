@@ -1,12 +1,12 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Image } from 'react-native';
 
 const MealItem = ({ title, imageUrl }) => {
   return (
     <View>
       <Pressable>
         <View>
-          <Image source={{ uri: imageUrl }} />
-          <Text>{title}</Text>
+          <Image style={styles.image} source={{ uri: imageUrl }} />
+          <Text style={styles.title}>{title}</Text>
         </View>
       </Pressable>
   </View>
@@ -14,4 +14,16 @@ const MealItem = ({ title, imageUrl }) => {
 };
 
 export default MealItem;
+
+const styles = StyleSheet.create({
+  image: {
+    width: '100%',
+    height: 200,
+  },
+  title: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 18,
+  },
+});
 
