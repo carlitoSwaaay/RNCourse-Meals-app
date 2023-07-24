@@ -1,6 +1,6 @@
 import { View, Text, Pressable, StyleSheet, Image } from 'react-native';
 
-const MealItem = ({ title, imageUrl, duration, complexity, affordability }) => {
+function MealItem({ title, imageUrl, duration, complexity, affordability }) {
   return (
     <View style={styles.mealItem}>
       <Pressable>
@@ -16,7 +16,7 @@ const MealItem = ({ title, imageUrl, duration, complexity, affordability }) => {
       </Pressable>
   </View>
 );
-};
+}
 
 export default MealItem;
 
