@@ -1,8 +1,14 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 
-const MealItem = ({ title }) => {
-  return (<View>
-    <Text>{title}</Text>
+const MealItem = ({ title, imageUrl }) => {
+  return (
+    <View>
+      <Pressable>
+        <View>
+          <Image source={{ uri: imageUrl }} />
+          <Text>{title}</Text>
+        </View>
+      </Pressable>
   </View>
 );
 };
