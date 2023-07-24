@@ -3,16 +3,21 @@ import { View, Text, Pressable, StyleSheet, Image, Platform } from 'react-native
 const MealItem = ({ title, imageUrl, duration, complexity, affordability }) => {
   return (
     <View style={styles.mealItem}>
-      <Pressable>
+      <Pressable
+        android_ripple={{ color: '#ccc' }}
+        style={({ pressed }) =>
+          pressed ? styles.buttonPressed : null
+        }
+      >
         <View style={styles.innerContainer}>
           <View>
             <Image style={styles.image} source={{ uri: imageUrl }} />
             <Text style={styles.title}>{title}</Text>
           </View>
           <View style={styles.details}>
-            <Text style={styles.detailItem}>{duration}</Text>
-            <Text style={styles.detailItem}>{complexity.toUppercase()}</Text>
-            <Text style={styles.detailItem}>{affordability.toUppercase()}</Text>
+            <Text style={styles.detailItem}>{duration} MINUTES  |</Text>
+            <Text style={styles.detailItem}>{complexity.toString().toUpperCase()}  |</Text>
+            <Text style={styles.detailItem}>{affordability.toString().toUpperCase()}</Text>
           </View>
         </View>
       </Pressable>
@@ -58,6 +63,9 @@ const styles = StyleSheet.create({
   detailItem: {
     marginHorizontal: 4,
     fontSize: 12,
+  },
+  buttonPressed: {
+    opacity: 0.5,
   },
 });
 
