@@ -33,7 +33,7 @@ export default function App() {
             //   };
             // }}
           />
-          <Stack.Screen name="MealDetail"
+          <Stack.Screen name="MealsDetail"
             component={MealDetailScreen}
             options={{ title: 'Details' }}
           />
