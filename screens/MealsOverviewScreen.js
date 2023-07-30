@@ -1,6 +1,6 @@
 import { StyleSheet, FlatList, View } from 'react-native';
 import MealItem from '../components/MealItem';
-import { MEALS, CATAGORIES } from '../data/dummy-data';
+import { MEALS, CATEGORIES } from '../data/dummy-data';
 
 
 function MealsOverviewScreen({ route, navigation }) {
@@ -13,7 +13,7 @@ function MealsOverviewScreen({ route, navigation }) {
 
   navigation.setOptions({});
 
-  const categoryTitle = CATAGORIES.find((category) => category.id === catId);
+  const categoryTitle = CATEGORIES.find((category) => category.id === catId);
 
   function renderMealItem(itemData) {
 
