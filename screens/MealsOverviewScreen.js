@@ -11,9 +11,11 @@ function MealsOverviewScreen({ route, navigation }) {
     return mealItem.categoryIds.indexOf(catId) >= 0;
   });
 
-  navigation.setOptions({});
+  navigation.setOptions({
+    title: categoryTitle,
+  });
 
-  const categoryTitle = CATEGORIES.find((category) => category.id === catId);
+  const categoryTitle = CATEGORIES.find((category) => category.id === catId).title;
 
   function renderMealItem(itemData) {
 
