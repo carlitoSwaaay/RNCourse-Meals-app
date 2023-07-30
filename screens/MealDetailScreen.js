@@ -1,12 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { FlatList } from 'react-native'
 
-const MealDetailScreen = () => {
-  return (
-    <View>
-      <Text>MealDetailScreen</Text>
-    </View>
-  )
+
+
+
+
+const MealDetailScreen = ({ navigation }) => {
+  const renderDetailItems = (itemData) => {
+    const pressHandler = () => {
+
+   }
+ };
 }
 
 export default MealDetailScreen
