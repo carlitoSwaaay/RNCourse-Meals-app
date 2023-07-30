@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import MealsOverviewScreen from './screens/MealsOverviewScreen';
 import CategoriesScreen from './screens/CategoriesScreen';
+import MealDetailScreen from './screens/MealDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,10 @@ export default function App() {
             //     title: catId,
             //   };
             // }}
+          />
+          <Stack.Screen name="MealDetail"
+            component={MealDetailScreen}
+            options={{ title: 'Details' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
