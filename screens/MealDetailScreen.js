@@ -6,15 +6,19 @@ import { FlatList } from 'react-native'
 
 
 
-const MealDetailScreen = ({ navigation }) => {
-  const renderDetailItems = (itemData) => {
-    const pressHandler = () => {
+const MealDetailScreen = ({ route, navigation }) => {
+  const catId = route.params.categoryId;
 
-   }
- };
+
+  return (
+    <View>
+      <Text>MealDetailScreen</Text>
+    </View>
+  );
+
 }
 
-export default MealDetailScreen
+export default MealDetailScreen;
 
 const styles = StyleSheet.create({
   container: {
