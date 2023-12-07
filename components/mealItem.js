@@ -4,9 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 const MealItem = ({ id, title, imageUrl, duration, complexity, affordability }) => {
   const navigation = useNavigation();
 
-  function selectMealItemHandler() {
+  const selectMealItemHandler = () => {
 
-    navigation.navigate('MealDetail', {
+    navigation.navigate("MealDetail", {
       mealId: id,
     });
 
