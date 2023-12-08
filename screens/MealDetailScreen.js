@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import { FlatList } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
+
+import { MEALS } from '../data/dummy-data'
 
 
 
@@ -10,10 +10,12 @@ const MealDetailScreen = ({ route }) => {
 
   const mealId = route.params.mealId;
 
+  const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+
   return (
     <View>
-      <Image />
-      <Text>MealDetailScreen ({mealId})</Text>
+      <Image source={{ uri: selectedMeal.imageUrl }} />
+      <Text>{selectedMeal.title}</Text>
       <View>
 
       </View>
