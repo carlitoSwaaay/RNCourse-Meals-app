@@ -12,6 +12,7 @@ const CategoriesScreen = ({ navigation }) => {
       navigation.navigate("MealsOverview", {
         categoryId: itemData.item.id,
       });
+      console.log("pressed");
     };
 
     return (
