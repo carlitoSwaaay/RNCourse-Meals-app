@@ -6,13 +6,13 @@ import { FlatList } from 'react-native'
 
 
 
-const MealDetailScreen = () => {
+const MealDetailScreen = ({ route }) => {
 
-
+  const mealId = route.params.mealId;
 
   return (
     <View>
-      <Text>MealDetailScreen (MEAL ID)</Text>
+      <Text>MealDetailScreen ({mealId})</Text>
     </View>
   );
 
