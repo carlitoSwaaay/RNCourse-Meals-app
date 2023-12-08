@@ -12,7 +12,15 @@ const MealDetailScreen = ({ route }) => {
 
   return (
     <View>
+      <Image />
       <Text>MealDetailScreen ({mealId})</Text>
+      <View>
+
+      </View>
+      <Text>Ingredients</Text>
+
+      <Text>Steps</Text>
+
     </View>
   );
 
