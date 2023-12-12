@@ -1,10 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
+
 import MealDetails from '../components/MealDetails';
-
-import { MEALS } from '../data/dummy-data'
-
-
-
+import { MEALS } from '../data/dummy-data';
 
 
 const MealDetailScreen = ({ route }) => {
@@ -15,8 +12,8 @@ const MealDetailScreen = ({ route }) => {
 
   return (
     <View>
-      <Image source={{ uri: selectedMeal.imageUrl }} />
-      <Text>{selectedMeal.title}</Text>
+      <Image style={styles.image} source={{ uri: selectedMeal.imageUrl }} />
+      <Text style={styles.title}>{selectedMeal.title}</Text>
       <View>
         <MealDetails
           duration={selectedMeal.duration}
@@ -25,9 +22,13 @@ const MealDetailScreen = ({ route }) => {
         />
       </View>
       <Text>Ingredients</Text>
-
+      {selectedMeal.ingredients.map((ingredients) => (
+        <Text key={ingredients}>{ingredients}</Text>
+      ))}
       <Text>Steps</Text>
-
+      {selectedMeal.steps.map((steps) => (
+        <Text key={steps}>{steps}</Text>
+      ))}
     </View>
   );
 
@@ -36,6 +37,17 @@ const MealDetailScreen = ({ route }) => {
 export default MealDetailScreen;
 
 const styles = StyleSheet.create({
+  image: {
+    width: '100%',
+    height: 300,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    margin: 8,
+    textAlign: 'center',
+    color: 'white',
+  },
   container: {
     flex: 1,
   },

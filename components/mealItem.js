@@ -27,11 +27,6 @@ const MealItem = ({ id, title, imageUrl }) => {
             <Image style={styles.image} source={{ uri: imageUrl }} />
             <Text style={styles.title}>{title}</Text>
           </View>
-          <MealDetails
-            duration={duration}
-            complexity={complexity}
-            affordability={affordability}
-          />
         </View>
       </Pressable>
     </View>
