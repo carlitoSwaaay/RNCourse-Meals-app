@@ -11,7 +11,7 @@ const MealDetailScreen = ({ route }) => {
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
   return (
-    <View>
+    <View style={styles.container}>
       <Image style={styles.image} source={{ uri: selectedMeal.imageUrl }} />
       <Text style={styles.title}>{selectedMeal.title}</Text>
       <View>
@@ -19,15 +19,16 @@ const MealDetailScreen = ({ route }) => {
           duration={selectedMeal.duration}
           complexity={selectedMeal.complexity}
           affordability={selectedMeal.affordability}
+          textStyle={styles.detailText}
         />
       </View>
-      <Text>Ingredients</Text>
+      <Text style={styles.subtitle}>Ingredients</Text>
       {selectedMeal.ingredients.map((ingredients) => (
-        <Text key={ingredients}>{ingredients}</Text>
+        <Text key={ingredients} style={styles.detailText}>{ingredients}</Text>
       ))}
-      <Text>Steps</Text>
+      <Text style={styles.subtitle}>Steps</Text>
       {selectedMeal.steps.map((steps) => (
-        <Text key={steps}>{steps}</Text>
+        <Text key={steps} style={styles.detailText}>{steps}</Text>
       ))}
     </View>
   );
@@ -48,7 +49,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
   },
+  detailText: {
+    color: 'white'
+  },
+  subtitle: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    margin: 6,
+    textAlign: 'center',
+    borderBottomColor: 'white',
+    borderBottomWidth: 2,
+
+
+  },
   container: {
     flex: 1,
+    margin: 4,
   },
 })
